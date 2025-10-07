@@ -17,7 +17,7 @@ const projects = [
     title: "School-UMG",
     description:
       "Sistema de gestión escolar completo que incluye administración de estudiantes, profesores, cursos y calificaciones. Diseñado específicamente para instituciones educativas.",
-    image: "/school-management-dashboard.png",
+    image: "/SchoolUmg.jpg",
     technologies: ["Next.js", "TypeScript", "SQL Server", "Azure"],
     liveUrl: "#",
     githubUrl: "#",
