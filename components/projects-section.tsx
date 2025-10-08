@@ -2,6 +2,8 @@ import { ExternalLink, Github } from "lucide-react"
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
+import { motion } from "framer-motion"
+
 
 const projects = [
   {
@@ -76,14 +78,17 @@ export function ProjectsSection() {
           {projects.map((project, index) => (
             <Card
               key={index}
-              className="bg-surface border-border overflow-hidden hover:border-primary transition-all duration-300 flex flex-col"
+              className="bg-surface border border-border overflow-hidden
+             hover:shadow-xl hover:scale-[1.02] hover:border-primary
+             transition-all duration-300 ease-in-out flex flex-col"
             >
-              <div className="aspect-video overflow-hidden">
+              <div className="aspect-video relative overflow-hidden">
                 <img
                   src={project.image || "/placeholder.svg"}
                   alt={project.title}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover transition-transform duration-500 ease-out hover:scale-110"
                 />
+                <div className="absolute inset-0 bg-black/0 hover:bg-black/10 transition-colors duration-500" />
               </div>
               <CardHeader>
                 <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
