@@ -5,10 +5,10 @@ import { Badge } from "@/components/ui/badge"
 
 const projects = [
   {
-    title: "MisPleis",
+    title: "MisPelis",
     description:
       "Aplicación web para gestión y descubrimiento de películas. Permite a los usuarios explorar, buscar y guardar sus películas favoritas con una interfaz intuitiva y moderna.",
-    image: "/movie-streaming-app-interface.png",
+    image: "/MIsPelis.png",
     technologies: ["React", "Next.js", "Tailwind CSS", "API REST"],
     liveUrl: "#",
     githubUrl: "#",
@@ -20,7 +20,7 @@ const projects = [
     image: "/SchoolUmg.jpg",
     technologies: ["Next.js", "TypeScript", "SQL Server", "Azure"],
     liveUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/Aiden-01/SchoolUmg_Front.git",
   },
   {
     title: "Portafolio Personal",
@@ -29,16 +29,16 @@ const projects = [
     image: "/modern-portfolio-website.png",
     technologies: ["Next.js", "React", "Tailwind CSS", "Vercel"],
     liveUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/Aiden-01/Portafolio.git",
   },
   {
-    title: "E-Commerce Platform",
+    title: "Red Social",
     description:
-      "Plataforma de comercio electrónico con carrito de compras, pasarela de pagos y panel de administración. Proyecto desarrollado en curso de Programación Web.",
-    image: "/ecommerce-website-interface.png",
-    technologies: ["React", "Node.js", "MongoDB", "Stripe"],
+      "Desarrollo de una red social con funcionalidades completas: publicación, comentarios, likes, edición de perfil, mensajería, notificaciones, búsqueda, etiquetas (# y menciones) y gestión de cuentas públicas o privadas con solicitudes de seguimiento. Proyecto desarrollado en el curso Base de Datos 2.",
+    image: "/RedSocial.jpg",
+    technologies: ["React", "Node.js", "MongoDB", "Spring Boot"],
     liveUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/Aiden-01/Fron_NexusSenpai.git",
   },
   {
     title: "Task Manager App",
