@@ -13,7 +13,7 @@ const projects = [
     image: "/MIsPelis.png",
     technologies: ["React", "Next.js", "Tailwind CSS", "API REST"],
     liveUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/JassCast18/MisPelis",
   },
   {
     title: "School-UMG",
@@ -28,9 +28,9 @@ const projects = [
     title: "Portafolio Personal",
     description:
       "Sitio web de portafolio profesional que muestra proyectos, habilidades y experiencia. Incluye diseño responsive, animaciones suaves y formulario de contacto funcional.",
-    image: "/modern-portfolio-website.png",
+    image: "/Portafolio.png",
     technologies: ["Next.js", "React", "Tailwind CSS", "Vercel"],
-    liveUrl: "#",
+    liveUrl: "https://aiden-01.github.io/Portafolio/",
     githubUrl: "https://github.com/Aiden-01/Portafolio.git",
   },
   {
