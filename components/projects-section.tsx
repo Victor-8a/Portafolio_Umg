@@ -41,13 +41,13 @@ const projects = [
     githubUrl: "https://github.com/Aiden-01/Fron_NexusSenpai.git",
   },
   {
-    title: "Task Manager App",
+    title: "Aproximaxión de Vogel",
     description:
-      "Aplicación de gestión de tareas con funcionalidades de colaboración en equipo, asignación de tareas, seguimiento de progreso y notificaciones en tiempo real.",
-    image: "/task-management-app.png",
-    technologies: ["Vue.js", "Firebase", "Tailwind CSS"],
+      "proyecto realizado con el fin de manipular datos utilizando operaciones completas aritmeticas, haciendo resulocion por medio de aproximaciones para matrices.",
+    image: "/voguel.png",
+    technologies: ["Java", "JavaFx", "Maven"],
     liveUrl: null, // sin demo
-    githubUrl: "#",
+    githubUrl: "https://github.com/JassCast18/AproximacionDeVoguel.git",
   },
   {
     title: "Weather Dashboard",
