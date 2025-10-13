@@ -13,9 +13,13 @@ import { useToast } from "@/hooks/use-toast"
 const contactInfo = [
   {
     icon: Mail,
-    label: "Email",
-    value: "contacto@umg-peten.edu.gt",
-    href: "mailto:contacto@umg-peten.edu.gt",
+    label: "Emails",
+    emails: [
+      { value: "contacto@miumg.edu.gt", href: "mailto:contacto@miumg.edu.gt" },
+      { value: "soporte@miumg.edu.gt", href: "mailto:soporte@miumg.edu.gt" },
+      { value: "hcoradoh@miumg.edu.gt", href: "mailto:hcoradoh@miumg.edu.gt" },
+      { value: "rcastellanosl@miumg.edu.gt", href: "mailto:rcastellanosl@miumg.edu.gt" },
+    ],
   },
   {
     icon: Phone,
@@ -160,26 +164,35 @@ export function ContactSection() {
           {/* Contact Information */}
           <div className="space-y-6">
             <div className="space-y-4">
-              {contactInfo.map((info, index) => (
-                <Card key={index} className="bg-background border-border hover:border-primary transition-colors">
-                  <CardContent className="p-6">
-                    <a
-                      href={info.href}
-                      className="flex items-start gap-4 group"
-                      target={info.href.startsWith("http") ? "_blank" : undefined}
-                      rel={info.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    >
-                      <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
-                        <info.icon className="h-6 w-6 text-primary" />
-                      </div>
-                      <div>
-                        <p className="text-sm text-muted-foreground mb-1">{info.label}</p>
-                        <p className="font-medium group-hover:text-primary transition-colors">{info.value}</p>
-                      </div>
-                    </a>
-                  </CardContent>
-                </Card>
-              ))}
+             {contactInfo.map((info, index) => (
+  <Card key={index} className="bg-background border-border hover:border-primary transition-colors">
+    <CardContent className="p-6">
+      <div className="flex items-start gap-4">
+        <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
+          <info.icon className="h-6 w-6 text-primary" />
+        </div>
+        <div>
+          <p className="text-sm text-muted-foreground mb-1">{info.label}</p>
+
+          {/* Si info tiene emails (array) */}
+          {info.emails ? (
+            info.emails.map((email, i) => (
+              <p key={i} className="font-medium group-hover:text-primary transition-colors">
+                <a href={email.href}>{email.value}</a>
+              </p>
+            ))
+          ) : (
+            // Caso normal: teléfono, ubicación, etc.
+            <p className="font-medium group-hover:text-primary transition-colors">
+              {info.href ? <a href={info.href}>{info.value}</a> : info.value}
+            </p>
+          )}
+        </div>
+      </div>
+    </CardContent>
+  </Card>
+))}
+
             </div>
 
             {/* Social Links */}
