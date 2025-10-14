@@ -50,11 +50,11 @@ const projects = [
     githubUrl: "https://github.com/JassCast18/AproximacionDeVoguel.git",
   },
   {
-    title: "Weather Dashboard",
+    title: "Concesionario El Rojo",
     description:
-      "Dashboard meteorológico que muestra pronósticos del tiempo en tiempo real, gráficos de temperatura y alertas climáticas para múltiples ubicaciones.",
-    image: "/weather-dashboard-interface.png",
-    technologies: ["React", "OpenWeather API", "Chart.js"],
+      "El proyecto tiene como objetivo representar de forma profesional la presencia digital del Concesionario El Rojo, brindando a los clientes un sitio atractivo, fácil de navegar y funcional, que refuerce la identidad de la marca y facilite la comunicación con sus potenciales compradores.",
+    image: "/ElRojo.png",
+    technologies: ["Java", "CSS", "HTML"],
     liveUrl: null, // ejemplo con demo visible
     githubUrl: "#",
   },
