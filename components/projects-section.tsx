@@ -10,7 +10,7 @@ const projects = [
       "Aplicación web para gestión y descubrimiento de películas. Permite a los usuarios explorar, buscar y guardar sus películas favoritas con una interfaz intuitiva y moderna.",
     image: "/MIsPelis.png",
     technologies: ["React", "Next.js", "Tailwind CSS", "API REST"],
-    liveUrl: null, // sin demo
+    liveUrl: "http://www.mispelis.me/", // sin demo
     githubUrl: "https://github.com/JassCast18/MisPelis",
   },
   {
