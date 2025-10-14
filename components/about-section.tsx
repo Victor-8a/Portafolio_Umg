@@ -2,22 +2,28 @@ import { Code2, Rocket, Users } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 
 const teamMembers = [
-  {
-    name: "Integrante 1",
-    role: "Desarrollador Full Stack",
-    image: "/professional-developer-portrait.png",
-    description: "Especializado en desarrollo frontend y backend con experiencia en React y Node.js.",
-  },
-  {
-    name: "Integrante 2",
-    role: "Diseñador UI/UX",
-    image: "/professional-designer-portrait.png",
-    description: "Enfocado en crear interfaces intuitivas y experiencias de usuario excepcionales.",
-  },
-  {
-    name: "Integrante 3",
+ {
+    name: "Victor Ochoa",
     role: "Desarrollador Backend",
-    image: "/professional-programmer.png",
+    image: "/victor.jpeg",
+    description: "Especializado en desarrollo de backend con experiencia en Node.js.",
+  },
+  {
+    name: "José Barquín",
+    role: "Desarrollador Backend",
+    image: "/Pocho.jpeg",
+    description: "Desarrollador backend con experiencia en Node.js, Express y bases de datos SQL y NoSQL. Enfocado en rendimiento, seguridad y arquitectura eficiente.",
+  },
+  {
+    name: "Hugo Corado",
+    role: "Desarrollador Frontend",
+    image: "hugo.jpeg",
+    description: "Desarrollador frontend con experiencia en Angular, React y Node.js. Enfocado en crear interfaces modernas y funcionales usando Tailwind CSS y CSS puro.",
+  },
+  {
+    name: "Jasser Castellanos",
+    role: "Desarrollador Backend",
+    image: "/jasser.jpeg",
     description: "Experto en bases de datos, APIs y arquitectura de sistemas escalables.",
   },
 ]
@@ -69,7 +75,8 @@ export function AboutSection() {
         {/* Team Members */}
         <div className="max-w-5xl mx-auto">
           <h3 className="text-2xl sm:text-3xl font-bold text-center mb-12">Nuestro Equipo</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
             {teamMembers.map((member, index) => (
               <Card
                 key={index}
