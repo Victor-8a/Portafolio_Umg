@@ -6,7 +6,7 @@ const teamMembers = [
     name: "Victor Ochoa",
     role: "Desarrollador Backend",
     image: "/victor.jpeg",
-    description: "Especializado en desarrollo de backend con experiencia en Node.js.",
+    description: "Experiencia en desarrollo backend con Node.js, creando APIs seguras y eficientes. Manejo de bases de datos y sistemas escalables.",
   },
   {
     name: "José Barquín",
@@ -22,9 +22,9 @@ const teamMembers = [
   },
   {
     name: "Jasser Castellanos",
-    role: "Desarrollador Backend",
+    role: "Ingeniero de Datos",
     image: "/jasser.jpeg",
-    description: "Experto en bases de datos, APIs y arquitectura de sistemas escalables.",
+    description: "Experiencia en flujos de datos, asegurando su calidad y disponibilidad. Manejo de SQL, Python y herramientas para arquitecturas seguras y escalables.",
   },
 ]
 
