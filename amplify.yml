@@ -1,0 +1,16 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - npm install  # Usar npm para instalar dependencias
+    build:
+      commands:
+        - npm run build  # Ejecutar el build con npm
+  artifacts:
+    baseDirectory: .next  # Directoria de salida de Next.js
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*

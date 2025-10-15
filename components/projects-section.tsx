@@ -19,7 +19,7 @@ const projects = [
       "Sistema de gestión escolar completo que incluye administración de estudiantes, profesores, cursos y calificaciones. Diseñado específicamente para instituciones educativas.",
     image: "/SchoolUmg.jpg",
     technologies: ["Next.js", "TypeScript", "SQL Server", "Azure"],
-    liveUrl: "www.schoolumg.tech", 
+    liveUrl: "https://www.schoolumg.tech/", 
     githubUrl: "https://github.com/Aiden-01/SchoolUmg_Front.git",
   },
   {
