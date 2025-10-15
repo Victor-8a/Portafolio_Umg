@@ -58,7 +58,7 @@ const teamSocials = [
     name: "Jaser Castellanos",
     github: "https://github.com/JassCast18",
     likedin: "https://www.linkedin.com/in/jasser-castellanos-9b4b2523b/",
-    facebook: "https://www.facebook.com/rjsguapo/",
+    
   },
 ]
 

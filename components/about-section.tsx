@@ -23,7 +23,7 @@ const teamMembers = [
   {
     name: "Jasser Castellanos",
     role: "Ingeniero de Datos",
-    image: "/jasser.jpeg",
+    image: "/Jasser.jpeg",
     description: "Experiencia en flujos de datos, asegurando su calidad y disponibilidad. Manejo de SQL, Python y herramientas para arquitecturas seguras y escalables.",
   },
 ]

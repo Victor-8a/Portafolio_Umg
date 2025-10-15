@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   title: "UMG Portafolio - Desarrollo Web",
   description: "Portafolio de proyectos de Desarrollo Web - Universidad Mariano Gálvez, Campus Petén",
   generator: "v0.app",
+  icons: {
+    icon: "/jhp.png", // o "/icon.png", dependiendo de tu archivo
+  },
 }
 
 export default function RootLayout({
