@@ -44,46 +44,7 @@ export function Footer() {
           </div>
 
           {/* Social & Contact */}
-          <div>
-            <h4 className="font-semibold mb-4">Conéctate con Nosotros</h4>
-            <div className="flex gap-4 mb-4">
-              <a
-                href="https://github.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 bg-surface hover:bg-primary hover:text-primary-foreground rounded-lg transition-colors"
-                aria-label="GitHub"
-              >
-                <Github className="h-5 w-5" />
-              </a>
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 bg-surface hover:bg-primary hover:text-primary-foreground rounded-lg transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="h-5 w-5" />
-              </a>
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 bg-surface hover:bg-primary hover:text-primary-foreground rounded-lg transition-colors"
-                aria-label="Facebook"
-              >
-                <Facebook className="h-5 w-5" />
-              </a>
-              <a
-                href="mailto:contacto@umg-peten.edu.gt"
-                className="p-2 bg-surface hover:bg-primary hover:text-primary-foreground rounded-lg transition-colors"
-                aria-label="Email"
-              >
-                <Mail className="h-5 w-5" />
-              </a>
-            </div>
-            <p className="text-muted-foreground text-sm">contacto@umg-peten.edu.gt</p>
-          </div>
+          
         </div>
 
         <div className="border-t border-border pt-8 text-center">
