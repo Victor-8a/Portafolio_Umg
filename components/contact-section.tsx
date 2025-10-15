@@ -1,7 +1,7 @@
 "use client"
 
-import type React from "react"
-import { useState } from "react"
+import React, { useState, useEffect } from "react"
+import { useForm, ValidationError } from "@formspree/react"
 import { Mail, Phone, MapPin, Github, Linkedin, Facebook } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -38,52 +38,39 @@ const contactInfo = [
   },
 ]
 
-// 🔹 Redes sociales por integrante (orden igual al de los emails y teléfonos)
 const teamSocials = [
   {
     name: "Victor Ochoa",
-    github: "https://github.com/vochoaj",
-    linkedin: "https://linkedin.com/in/vochoaj",
+    github: "https://github.com/Victor-8a",
+    facebook: "https://www.facebook.com/victor.ochoa.152720",
   },
   {
     name: "José Barquín",
-    github: "https://github.com/jbarquinp",
-    linkedin: "https://linkedin.com/in/jbarquinp",
+    github: "https://github.com/Josebarpi",
+    facebook: "https://www.facebook.com/joseangel.barquinpinelo",
   },
   {
     name: "Hugo Corado",
-    github: "https://github.com/hcoradoh",
-    linkedin: "https://linkedin.com/in/hcoradoh",
+    github: "https://github.com/Aiden-01",
+    facebook: "https://www.facebook.com/huguito.corado.2025",
   },
   {
     name: "Jaser Castellanos",
     github: "https://github.com/JassCast18",
-    linkedin: "https://www.linkedin.com/in/jaser-castellanos-89733a276",
-
+    likedin: "https://www.linkedin.com/in/jasser-castellanos-9b4b2523b/",
+    facebook: "https://www.facebook.com/rjsguapo/",
   },
 ]
 
 export function ContactSection() {
   const { toast } = useToast()
+  const [formState, handleSubmit] = useForm("xanppgar")
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     subject: "",
     message: "",
   })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    await new Promise((resolve) => setTimeout(resolve, 1000))
-    toast({
-      title: "¡Mensaje enviado!",
-      description: "Gracias por contactarnos. Te responderemos pronto.",
-    })
-    setFormData({ name: "", email: "", subject: "", message: "" })
-    setIsSubmitting(false)
-  }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData((prev) => ({
@@ -92,43 +79,93 @@ export function ContactSection() {
     }))
   }
 
+  // ✅ Muestra solo el toast al completar envío exitoso
+  useEffect(() => {
+    if (formState.succeeded) {
+      toast({
+        title: "¡Mensaje enviado!",
+        description: "Gracias por contactarnos. Te responderemos pronto.",
+        
+      })
+      setFormData({ name: "", email: "", subject: "", message: "" })
+    }
+  }, [formState.succeeded, toast])
+
   return (
     <section id="contacto" className="py-20 md:py-32 bg-surface">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-balance">Contacto</h2>
-          <p className="text-lg text-muted-foreground text-pretty leading-relaxed">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">Contacto</h2>
+          <p className="text-lg text-muted-foreground leading-relaxed">
             ¿Tienes alguna pregunta o propuesta? No dudes en contactarnos. Estamos disponibles para colaboraciones y nuevos proyectos.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto">
-          {/* FORMULARIO */}
+          {/* FORMULARIO CON FORMSPREE */}
           <Card className="bg-background border-border">
             <CardContent className="p-6 md:p-8">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium mb-2">Nombre Completo</label>
-                  <Input id="name" name="name" type="text" required value={formData.name} onChange={handleChange} placeholder="Tu nombre" className="bg-surface" />
+                  <Input
+                    id="name"
+                    name="name"
+                    type="text"
+                    required
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="Tu nombre"
+                    className="bg-surface"
+                  />
                 </div>
 
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium mb-2">Correo Electrónico</label>
-                  <Input id="email" name="email" type="email" required value={formData.email} onChange={handleChange} placeholder="tu@email.com" className="bg-surface" />
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    required
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="tu@email.com"
+                    className="bg-surface"
+                  />
+                  <ValidationError prefix="Email" field="email" errors={formState.errors} />
                 </div>
 
                 <div>
                   <label htmlFor="subject" className="block text-sm font-medium mb-2">Asunto</label>
-                  <Input id="subject" name="subject" type="text" required value={formData.subject} onChange={handleChange} placeholder="¿En qué podemos ayudarte?" className="bg-surface" />
+                  <Input
+                    id="subject"
+                    name="subject"
+                    type="text"
+                    required
+                    value={formData.subject}
+                    onChange={handleChange}
+                    placeholder="¿En qué podemos ayudarte?"
+                    className="bg-surface"
+                  />
                 </div>
 
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium mb-2">Mensaje</label>
-                  <Textarea id="message" name="message" required value={formData.message} onChange={handleChange} placeholder="Escribe tu mensaje aquí..." rows={5} className="bg-surface resize-none" />
+                  <Textarea
+                    id="message"
+                    name="message"
+                    required
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder="Escribe tu mensaje aquí..."
+                    rows={5}
+                    className="bg-surface resize-none"
+                  />
+                  <ValidationError prefix="Message" field="message" errors={formState.errors} />
                 </div>
 
-                <Button type="submit" className="w-full" size="lg" disabled={isSubmitting}>
-                  {isSubmitting ? "Enviando..." : "Enviar Mensaje"}
+                <Button type="submit" className="w-full" size="lg" disabled={formState.submitting}>
+                  {formState.submitting ? "Enviando..." : "Enviar Mensaje"}
                 </Button>
               </form>
             </CardContent>
@@ -141,31 +178,24 @@ export function ContactSection() {
                 <Card key={index} className="bg-background border-border hover:border-primary transition-colors">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
-                      <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
+                      <div className="p-3 bg-primary/10 rounded-lg">
                         <info.icon className="h-6 w-6 text-primary" />
                       </div>
                       <div>
                         <p className="text-sm text-muted-foreground mb-1">{info.label}</p>
 
-                        {/* Emails */}
-                        {info.emails && info.emails.map((email, i) => (
-                          <p key={i} className="font-medium group-hover:text-primary transition-colors">
+                        {info.emails?.map((email, i) => (
+                          <p key={i} className="font-medium">
                             <a href={email.href}>{email.value}</a>
                           </p>
                         ))}
-
-                        {/* Teléfonos */}
-                        {info.phones && info.phones.map((phone, i) => (
-                          <p key={i} className="font-medium group-hover:text-primary transition-colors">
+                        {info.phones?.map((phone, i) => (
+                          <p key={i} className="font-medium">
                             <a href={phone.href}>{phone.value}</a>
                           </p>
                         ))}
-
-                        {/* Valor único (como ubicación) */}
                         {info.value && !info.emails && !info.phones && (
-                          <p className="font-medium group-hover:text-primary transition-colors">
-                            {info.href ? <a href={info.href}>{info.value}</a> : info.value}
-                          </p>
+                          <p className="font-medium">{info.value}</p>
                         )}
                       </div>
                     </div>
@@ -174,18 +204,32 @@ export function ContactSection() {
               ))}
             </div>
 
-            {/* 🔹 Redes Sociales por Integrante */}
+            {/* REDES SOCIALES */}
             <Card className="bg-background border-border">
               <CardContent className="p-6">
-                <h3 className="text-sm text-muted-foreground mb-1">Redes Sociales de los Integrantes</h3>
+                <h3 className="text-sm text-muted-foreground mb-1">
+                  Redes Sociales de los Integrantes
+                </h3>
                 <div className="space-y-4">
                   {teamSocials.map((member, i) => (
                     <div key={i} className="flex items-center justify-between">
                       <p className="font-medium">{member.name}</p>
                       <div className="flex gap-3">
-                        <a href={member.github} target="_blank" rel="noopener noreferrer"><Github className="h-5 w-5 hover:text-primary transition-colors" /></a>
-                        <a href={member.linkedin} target="_blank" rel="noopener noreferrer"><Linkedin className="h-5 w-5 hover:text-primary transition-colors" /></a>
-                        
+                        {member.github && (
+                          <a href={member.github} target="_blank" rel="noopener noreferrer">
+                            <Github className="h-5 w-5 hover:text-primary transition-colors" />
+                          </a>
+                        )}
+                        {member.facebook && (
+                          <a href={member.facebook} target="_blank" rel="noopener noreferrer">
+                            <Facebook className="h-5 w-5 hover:text-primary transition-colors" />
+                          </a>
+                        )}
+                        {member.likedin && (
+                          <a href={member.likedin} target="_blank" rel="noopener noreferrer">
+                            <Linkedin className="h-5 w-5 hover:text-primary transition-colors" />
+                          </a>
+                        )}
                       </div>
                     </div>
                   ))}
@@ -193,7 +237,7 @@ export function ContactSection() {
               </CardContent>
             </Card>
 
-            {/* Horario */}
+            {/* HORARIO */}
             <Card className="bg-background border-border">
               <CardContent className="p-6">
                 <h3 className="text-lg font-semibold mb-3">Horario de Atención</h3>
