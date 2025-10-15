@@ -10,7 +10,7 @@ const projects = [
       "Aplicación web para gestión y descubrimiento de películas. Permite a los usuarios explorar, buscar y guardar sus películas favoritas con una interfaz intuitiva y moderna.",
     image: "/MIsPelis.png",
     technologies: ["React", "Next.js", "Tailwind CSS", "API REST"],
-    liveUrl: "http://www.mispelis.me/", // sin demo
+    liveUrl: "http://www.mispelis.me/", 
     githubUrl: "https://github.com/JassCast18/MisPelis",
   },
   {
@@ -19,7 +19,7 @@ const projects = [
       "Sistema de gestión escolar completo que incluye administración de estudiantes, profesores, cursos y calificaciones. Diseñado específicamente para instituciones educativas.",
     image: "/SchoolUmg.jpg",
     technologies: ["Next.js", "TypeScript", "SQL Server", "Azure"],
-    liveUrl: null, // sin demo
+    liveUrl: "www.schoolumg.tech", 
     githubUrl: "https://github.com/Aiden-01/SchoolUmg_Front.git",
   },
   {
